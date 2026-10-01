@@ -243,7 +243,7 @@ export default async function LandingPage() {
         <div className="glass overflow-hidden rounded-3xl p-8 text-center sm:p-14">
           <h2 className="text-2xl font-bold text-white sm:text-4xl">Your next viral clip is already filmed.</h2>
           <p className="mx-auto mt-3 max-w-lg text-slate-400">
-            It's sitting in a 40-minute file. ClipForge finds it in under a minute.
+            It&apos;s sitting in a 40-minute file. ClipForge finds it in under a minute.
           </p>
           <Link
             href={user ? "/dashboard" : "/register"}

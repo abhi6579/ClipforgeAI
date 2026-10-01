@@ -116,7 +116,7 @@ export function BillingView({ events }: { events: CreditEvent[] }) {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-400">Billing history</h2>
           <div className="mt-4 space-y-2">
             {events.length === 0 && (
-              <p className="text-sm text-slate-500">No plan activity yet — you're on the free tier.</p>
+              <p className="text-sm text-slate-500">No plan activity yet — you&apos;re on the free tier.</p>
             )}
             {events.map((e) => (
               <div key={e.id} className="flex items-center justify-between border-b border-white/5 pb-2">
