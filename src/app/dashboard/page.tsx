@@ -135,7 +135,7 @@ export default async function OverviewPage() {
         <div className="space-y-5">
           <Card className="p-5">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-400">Today's tasks</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-400">Today&apos;s tasks</h2>
               <Link href="/dashboard/earn" className="text-xs text-brand-400 hover:underline">
                 Earn →
               </Link>

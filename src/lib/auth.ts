@@ -46,16 +46,20 @@ export async function destroySession() {
 }
 
 export async function getCurrentUser(): Promise<User | null> {
-  const jar = await cookies();
-  const token = jar.get(COOKIE)?.value;
-  if (!token) return null;
-  const rows = await db
-    .select({ user: users })
-    .from(sessions)
-    .innerJoin(users, eq(users.id, sessions.userId))
-    .where(and(eq(sessions.id, token), gt(sessions.expiresAt, new Date())))
-    .limit(1);
-  return rows[0]?.user ?? null;
+  try {
+    const jar = await cookies();
+    const token = jar.get(COOKIE)?.value;
+    if (!token) return null;
+    const rows = await db
+      .select({ user: users })
+      .from(sessions)
+      .innerJoin(users, eq(users.id, sessions.userId))
+      .where(and(eq(sessions.id, token), gt(sessions.expiresAt, new Date())))
+      .limit(1);
+    return rows[0]?.user ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export async function requireUser(): Promise<User> {
